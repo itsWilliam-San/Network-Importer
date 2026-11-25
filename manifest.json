@@ -1,0 +1,35 @@
+{
+    "name": "Network Importer",
+    "description": "Imports sewer hydraulic network data into the application",
+    "version": "1.0.0",
+    "author": ["William"],
+    "id": "com.william.network-importer",
+    "tags": ["extraction"],
+    "exports": [
+
+        {
+            "id": "import_network",
+            "label": "Importar Rede Hidráulica",
+            "description": "Carrega dados de rede de esgoto com estações e tubulações para o sistema",
+            "entrypoint": "import_network",
+            "update_network_data": true,
+            "parameters": [
+                {
+                    "name": "source",
+                    "param_type": "select",
+                    "label": "Fonte de Dados",
+                    "options": ["sample_network", "custom_file"],
+                    "default": "sample_network",
+                    "required": true
+                },
+                {
+                    "name": "file_path",
+                    "param_type": "string",
+                    "label": "Caminho do Arquivo (se custom)",
+                    "default": "",
+                    "required": false
+                }
+            ]
+        }
+    ]
+}
